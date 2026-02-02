@@ -28,6 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+LOGIN_REDIRECT_URL = '/alunos/'
+LOGOUT_REDIRECT_URL = '/alunos/'
+LOGIN_URL = '/accounts/login/'
 # Application definition
 
 INSTALLED_APPS = [
