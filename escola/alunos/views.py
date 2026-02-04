@@ -1,9 +1,21 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Aluno
 from .forms import AlunoForm
 
+=======
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from .models import Aluno
+from .forms import AlunoForm
+>>>>>>> voltando
 
+@login_required
+def index(request):
+    return render(request, 'alunos/index.html')
+
+@login_required
 def lista_alunos(request):
     alunos = Aluno.objects.all()
     return render(request, 'alunos/lista_alunos.html', {'alunos': alunos})
@@ -18,4 +30,8 @@ def cadastrar_aluno(request):
     else:
         form = AlunoForm()
 
+<<<<<<< HEAD
     return render(request, 'alunos/form_aluno.html', {'form': form})
+=======
+    return render(request, 'alunos/form_aluno.html', {'form': form})
+>>>>>>> voltando

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Alunos</title>
+</head>
+<body>
+    <h1>Plataforma</h1>
+
+    <ol>
+        <li>
+            <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Deslogar</button>
+            </form>
+        </li>
+
+        <li>
+            <a href="{% url 'lista' %}">Listar Alunos</a>
+        </li>
+
+        <li>
+            <a href="{% url 'cadastrar' %}">Adicionar Alunos</a>
+        </li>
+    </ol>
+</body>
+</html>
