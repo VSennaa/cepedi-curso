@@ -4,18 +4,79 @@
     <title>Lista de Alunos</title>
     <style>
         body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
             background-color: #e3f7ff;
         }
+
+        fieldset {
+            width: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #edfaff;
+        }
+
+        legend h1 {
+            margin: 0;
+        }
         
+        legend {
+            text-align: center;
+            padding: 0 10px;
+        }
+        
+        .tabela {   
+            list-style-position: inside;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .tabela li {
+            display: grid;
+            grid-template-columns: 1fr 80px 1.5fr 1fr;
+            gap: 10px;
+            padding: 6px 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tabela li.header {
+            font-weight: bold;
+            border-bottom: 2px solid #999;
+        }
+
+        .tabela li:last-child {
+            border-bottom: none;
+        }
+        .nome {
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
-    <h1>Alunos Cadastrados</h1>
-    <a href="/alunos/">Voltar</a>
-    <ol>
-        {% for aluno in alunos %}
-            <li>{{ aluno.nome }} - {{ aluno.idade }} anos - {{ aluno.email}} email</li>
-        {% endfor %}
-    </ol>
+    <fieldset>
+        <legend><h1>Alunos Cadastrados</h1></legend>
+        <a href="/alunos/">Voltar</a>
+        <ol class="tabela">
+            <li class="header">
+                <span>Nome</span>
+                <span>Idade</span>
+                <span>Email</span>
+                <span>Status</span>
+            </li>
+            {% for aluno in alunos %}
+                <li>
+                    <span class="nome">{{ aluno.nome }}</span>
+                    <span>{{ aluno.idade }} anos</span>
+                    <span>{{ aluno.email }}</span>
+                    <span>{% if aluno.matriculado %}Matriculado{% else %}Não matriculado{% endif %}</span>
+                </li>
+            {% endfor %}
+        </ol>
+    </fieldset>
 </body>
 </html>

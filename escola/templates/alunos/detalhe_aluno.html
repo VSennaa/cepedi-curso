@@ -5,13 +5,34 @@
     <title>Aluno Sorteado</title>
     <style>
         body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* horizontal */
+            align-items: center;     /* vertical */
             background-color: #e3f7ff;
+        }
+
+        fieldset {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #edfaff;
+        }
+
+        legend {
+            font-weight: bold;
+            text-align: center;
+            padding: 0 10px;
         }
         
     </style>
 </head>
         <body>
-           <h1>{{ aluno.nome }}</h1>
+        <fieldset>
+           <legend><h1>{{ aluno.nome }}</h1></legend>
 
             <p><strong>ID:</strong> {{ aluno.id }}</p>
             <p><strong>Email:</strong> {{ aluno.email }}</p>
@@ -19,5 +40,6 @@
         	<br>
     	    <a href="{% url 'lista_alunos' %}">Voltar para a lista</a>
 	        <a href="{% url 'detalhe_aluno' %}">Sortear outro</a>
+        </fieldset>
         </body>
 </html>

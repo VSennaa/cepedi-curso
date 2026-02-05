@@ -4,13 +4,34 @@
     <title>Lista de Alunos</title>
     <style>
         body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* horizontal */
+            align-items: center;     /* vertical */
             background-color: #e3f7ff;
+        }
+
+        fieldset {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #edfaff;
+        }
+
+        legend {
+            font-weight: bold;
+            text-align: center;
+            padding: 0 10px;
         }
         
     </style>
 </head>
 <body>
-    <h1>Plataforma</h1>
+    <fieldset>
+        <legend>Plataforma</legend>
 
     <ol>
         <li>
@@ -28,5 +49,6 @@
             <a href="{% url 'cadastrar' %}">Adicionar Alunos</a>
         </li>
     </ol>
+    </fieldset>
 </body>
 </html>
