@@ -23,9 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$0uu#y08*@&43#gl&%+of80^5hk0e4-xq#r^@a-u=onnbh46i6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/alunos/'
